@@ -1,0 +1,14 @@
+{
+  "name": "static-analysis",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "source-map": "~0.1.31",
+    "uglify-js": "~2.4.9"
+  },
+  "devDependencies": {
+    "LiveScript": "~1.2.0",
+  },
+  "author": "",
+  "license": "MIT"
+}
