@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Simple static analysis tool for JS.",
   "main": "lib/analyze.js",
+  "bin": {
+    "linty": "bin/linty"
+  },
   "dependencies": {
     "source-map": "~0.1.31",
     "uglify-js": "~2.4.9",
