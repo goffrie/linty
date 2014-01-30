@@ -1,14 +1,34 @@
 {
-  "name": "static-analysis",
-  "version": "0.0.0",
-  "description": "",
+  "name": "linty",
+  "version": "0.1.0",
+  "description": "Simple static analysis tool for JS.",
+  "main": "lib/analyze.js",
   "dependencies": {
     "source-map": "~0.1.31",
     "uglify-js": "~2.4.9"
   },
   "devDependencies": {
-    "LiveScript": "~1.2.0",
+    "mocha": "~1.12.0",
+    "LiveScript": "~1.2.0"
   },
-  "author": "",
-  "license": "MIT"
+  "author": {
+    "name": "Geoffry Song",
+    "email": "goffrie@gmail.com"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goffrie/linty.git"
+  },
+  "bugs": {
+    "url": "https://github.com/goffrie/linty/issues"
+  },
+  "scripts": {
+    "prepublish": "make",
+    "test": "node_modules/.bin/mocha --compilers ls:LiveScript"
+  },
+  "license": "BSD"
 }
