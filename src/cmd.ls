@@ -1,9 +1,17 @@
 require! {
     path
     fs
+    commander
     analyze: './analyze'
     \source-map
 }
+
+commander
+    .version '0.1.0'
+    .usage '[options] <file ...>'
+    .option '-i, --ignore <regex>', 'Names to ignore'
+    .option '-g, --globals <names>', 'Comma-separated list of known globals'
+    .parse process.argv
 
 print-message = ({ filename, line, col, comment, details }) !->
     filename = path.relative process.cwd(), filename
@@ -15,10 +23,10 @@ print-message = ({ filename, line, col, comment, details }) !->
     if details?
         console.log "#{Array(prefix.length + 1).join ' '}#details"
 
-ignore-names = /(^_.)|(^data$)/
-known-globals = [ 'rootRequire' ]
+ignore-names = if commander.ignore then new RegExp commander.ignore
+known-globals = if commander.globals then commander.globals.split ','
 
-for let filename in process.argv.slice 2
+for let filename in commander.args
     js = fs.read-file-sync filename, encoding: 'utf-8'
     if m = js.match /\/\/[@#].*sourceMappingURL\s*=\s*(.*)\s*$/
         map-file = m[1]

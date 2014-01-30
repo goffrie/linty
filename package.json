@@ -5,7 +5,8 @@
   "main": "lib/analyze.js",
   "dependencies": {
     "source-map": "~0.1.31",
-    "uglify-js": "~2.4.9"
+    "uglify-js": "~2.4.9",
+    "commander": "~2.1.0"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
