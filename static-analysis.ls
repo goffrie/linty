@@ -14,7 +14,7 @@ add-comment = (ctx, node, comment, details) !->
             line
             column
         }
-        if !pos.line && node.thedef?.references?.length
+        if !pos?.line && node.thedef?.references?.length
             # No mapping exists for this variable.
             # But CoffeeScript & co. insert automatic `var` statements for variables.
             # Maybe we can find a source line for the first _reference_ to this variable?
@@ -25,7 +25,7 @@ add-comment = (ctx, node, comment, details) !->
                 line
                 column
             }
-        if pos.source
+        if pos?.source
             { line, column, source } = pos
             # Clean up the source name for readability.
             source = path.relative process.cwd(), path.resolve path.dirname(ctx.map-file), source
