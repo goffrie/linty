@@ -7,12 +7,12 @@
     "linty": "bin/linty"
   },
   "dependencies": {
-    "source-map": "~0.1.31",
-    "uglify-js": "~2.4.9",
-    "commander": "~2.1.0"
+    "source-map": "~0.4.2",
+    "uglify-js": "~2.4.23",
+    "commander": "~2.8.1"
   },
   "devDependencies": {
-    "mocha": "~1.12.0",
+    "mocha": "~2.2.5",
     "LiveScript": "~1.2.0"
   },
   "author": {
@@ -32,7 +32,7 @@
   },
   "scripts": {
     "prepublish": "make",
-    "test": "node_modules/.bin/mocha --compilers ls:LiveScript"
+    "test": "mocha --compilers ls:LiveScript"
   },
   "license": "BSD"
 }
